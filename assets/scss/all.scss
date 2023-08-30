@@ -3,3 +3,285 @@
 
 
 @import './pages/index.scss';
+
+@import "../node_modules/bootstrap/scss/functions";
+
+
+@import "./helpers/variables";
+
+// @import "../node_modules/bootstrap/scss/bootstrap";
+// Configuration
+// @import "../node_modules/bootstrap/scss/functions";
+// @import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+
+// Layout & components
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/tables";
+@import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/transitions";
+@import "../node_modules/bootstrap/scss/dropdown";
+@import "../node_modules/bootstrap/scss/button-group";
+@import "../node_modules/bootstrap/scss/nav";
+@import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/bootstrap/scss/card";
+@import "../node_modules/bootstrap/scss/accordion";
+// @import "../node_modules/bootstrap/scss/breadcrumb";
+// @import "../node_modules/bootstrap/scss/pagination";
+@import "../node_modules/bootstrap/scss/badge";
+// @import "../node_modules/bootstrap/scss/alert";
+// @import "../node_modules/bootstrap/scss/progress";
+@import "../node_modules/bootstrap/scss/list-group";
+@import "../node_modules/bootstrap/scss/close";
+@import "../node_modules/bootstrap/scss/toasts";
+@import "../node_modules/bootstrap/scss/modal";
+@import "../node_modules/bootstrap/scss/tooltip";
+@import "../node_modules/bootstrap/scss/popover";
+@import "../node_modules/bootstrap/scss/carousel";
+@import "../node_modules/bootstrap/scss/spinners";
+@import "../node_modules/bootstrap/scss/offcanvas";
+@import "../node_modules/bootstrap/scss/placeholders";
+
+// Helpers
+@import "../node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+
+
+// 變數
+$primary: #80d4cc;
+$green-100: #f3f6f5;
+$green-secondary: #b8c6c2;
+// @gray-200: #F4F4F4;
+
+// 裝置寬度 Mixins
+@mixin pad {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin pc {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+// reset
+a {
+  text-decoration: none;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+// General Styles
+body {
+  padding-top: 120px;
+  @include pad {
+    padding-top: 80px;
+  }
+}
+.container {
+  max-width: 346px;
+  @include pad {
+    max-width: 696px;
+  }
+  @include pc {
+    max-width: 1296px;
+  }
+}
+
+// carousel
+.carousel{
+  width: 100%;
+  position:relative;
+  .carousel-inner{
+    width: 100%;
+    margin: 0 auto;
+  } 
+  .carousel-control-prev, 
+  .carousel-control-next {
+    background-color: #FFAE5B;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  
+    &.carousel-control-prev {
+      left: 0px;
+      @include pad {
+        left: -40px;
+      }
+      @include pc {
+        left: 0px
+      }
+    }
+  
+    &.carousel-control-next {
+      right: 0px;
+      @include pad {
+        right: -40px;
+      }
+      @include pc {
+        right: 0px
+      }
+    }
+  
+    .carousel-control-prev-icon, 
+    .carousel-control-next-icon {
+      width: 16px;
+      height: 16px;
+    }
+}
+  .carousel-indicators {
+    bottom: -44px;
+    button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #FFAE5B;
+    border: 1px solid #ccc;
+    margin: 0 8px;
+    transition: all 0.3s ease;
+  }
+  .active {
+    height: 14px;
+    background-color: #FFAE5B;
+    border-radius: 20%;
+    border: none;
+    transform: scaleX(3); /* Scale the active indicator horizontally */
+    transform-origin: center center; /* Set the transform origin to the center */
+    }
+  }
+}
+
+//tags-overflow
+.tag-row{
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+  .btn{
+    flex: 0 0 auto;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    &:hover{
+      background-color: #878787;
+      color:#fff;
+    }
+  }
+}
+
+// icon-list樣式
+.icons-list {
+  .list-inline-item {
+    width: 22%;
+    background-color: $green-100;
+    margin: 0;
+    padding: 3px 4px;
+    border-radius: 2px 2px 2px 2px;
+  }
+  .list-inline-item:last-child {
+    border-radius: 2px 2px 8px 2px;
+  }
+  .list-inline-item:first-child {
+    border-radius: 2px 2px 2px 8px;
+  }
+}
+
+// 卡片外框線條樣式
+.card {
+  border: 1px solid #f4f4f4;
+}
+
+// 通用樣式
+.fz12 {
+  font-size: 12px;
+}
+
+.color-gs {
+  color: $green-secondary;
+}
+
+.color-primary {
+  color: $primary;
+}
+
+// 完結/新書tag
+.card-new,
+.card-done {
+  position: relative;
+}
+// 下方小三角形
+.card-new::before,
+.card-done::before {
+  position: absolute;
+  top: 1.3rem;
+  right: -0.8rem;
+  content: "";
+  background: #f3ab61;
+  border-style: solid;
+  border-width: 10px 12px 0 0;
+  border-color: transparent white white white;
+}
+// 上方長方形
+.card-new::after,
+.card-done::after {
+  font-size: 12px;
+  position: absolute;
+  content: attr(data-label);
+  top: 2px;
+  right: -13px;
+  padding: 0.5rem;
+  width: 4rem;
+  background: #f3ab61;
+  color: white;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  line-height: 0.2rem;
+  box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
+}
+// 完結bg顏色
+.card-done::after,
+.card-done::before {
+  background-color: #8aabff;
+}
+
+// 留言 ...
+.card-text-truncate {
+  position: relative;
+  .text-truncate-3-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .text-truncate-3-lines::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 2rem; /* Adjust as needed */
+    height: 100%;
+    background: linear-gradient(to right, transparent, white);
+  }
+}
+.center-vertically {
+  display: flex;
+  align-items: center;
+}

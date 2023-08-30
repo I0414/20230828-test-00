@@ -5,18 +5,417 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
-    <script type="module" crossorigin src="/20230828-test-00/assets/main-2d761428.js"></script>
-    <link rel="stylesheet" href="/20230828-test-00/assets/main-4cfea7bd.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+    <script type="module" crossorigin src="/20230828-test-00/assets/main-e46ba62a.js"></script>
+    <link rel="stylesheet" href="/20230828-test-00/assets/main-8133a909.css">
   </head>
   <body>
-    <h1 class="header">我是 header</h1>
-<a href="index.html">index</a>
+    <header class="navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid d-flex">
+
+        <!-- header-left -->
+
+        <!-- logo -->
+        <div class="header-left d-flex">
+            <h1 class="mb-0">
+                <a class="navbar-brand d-flex" aria-current="page" href="#">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAoCAYAAAAG0SEsAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKRSURBVHgB7ZixbhpBEIb/OfuQixTkCXx9KEB2IqXDb2BXjhVFhidAfgKWJ4jTRW6Mu3SQJ4AukoMFSUjk8vIGV0URHExmjygYcXC7i5XG/iS40zHsv7M7Ozt7BEdU/7oI3+sA1FSFvTM4QHBA9T8F8P2+3Ob/NqM7UIUlHixJhHN+Zy6s4Urj+00dllh5/k+YEaQ2RqTqz/YaMMRYPEvYpQNG4qrfz8Of6KEumthLo5V6Yf8qy85szv1Jy1RYw0CzMeydZtlliqvhTUUuZVgiHTjPssn2fDzqyncXdoQMzpz3bM9LL0MJoi5skEmncdw2MFtP40evxtPsIUxpOcRoq6RKpWiVyVrPdQp1EtboJTkLVDiJS+6+xGaU1fC6AidxIMLmDOAirgr7B2A+gAuMNsZbT1XhhaO4TqkeuQ094ZBy09p6k3XCBrk8C1nvZ43C89SgXe2577c2FdYQ6O2qVJsqrr72DmGRy7Ng2elgKg7i+4jyO+r8MVVmlX0y59vbwVI7hKIeypS/DERkuZaLOVKl9Ii3ruHUt89lqRg6KT91k6VpgXUNd588ij+KPxzxbdgSx6Ekn+XikDiEJdbi4e0tct7ygPHU/sxp7/kOIh5TTVJs/u5jb4uacmnCAus5bx5VI2J6t/iUQ5qMjQ+IzuKaUS4+lyJhvvMxX70/qYawxEl80XsOL45PFRxwXmoXx28UkRyjmJxeiWiMQ5RbrwIjw+h3RNW2UTFCfHmYx5OdooSrfLCLKQeyXwdIXnvoiOY83Al1d8TFSNrVHfoi8THAmAd08iEkbr3WFWoZ/xWKEE8PkmFPhjSWksnjYuKpR7vyOEjsFivYILPR+SqYeTzzHuL5z+Te0yeYXyEdtaM/inzmVSTyuRgAAAAASUVORK5CYII=" alt="">
+                    <img src="data:image/jpeg;base64,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" alt="">
+                    <img src="/20230828-test-00/assets/shape-8dcea8c1.svg" alt="">
+                    <div class="d-flex flex-column">
+                        <img class="mb-1" src="/20230828-test-00/assets/共筆小說-33a0a080.svg" alt="">
+                        <img src="/20230828-test-00/assets/Think Up Together-d8c53cc0.svg" alt="">
+                    </div>
+                    
+                    <!-- <i class="bi bi-apple  me-1"></i> -->
+                    <!-- <span class="d-none d-md-block">ThinkupTogether</span> -->
+                    <span class="d-block d-md-none">TUT</span>
+                </a>
+            </h1>
+
+            <!-- search -->
+            <div class="d-none d-md-flex flex-grow-1 position-absolute start-50 translate-middle-x">
+                <form class="d-flex w-75 mx-auto ">
+                    <button class="btn position-absolute" type="submit"><i class="bi bi-search"></i></button>
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                        style="padding-left:3rem">
+                </form>
+            </div>
+        </div>
+
+        <!-- header-right -->
+        <div class="header-right">
+            <ul class="navbar-nav d-flex flex-row fs-3 align-items-center justify-content-end me-2">
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-cloud-moon"></i>
+                    </a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link active" href="#">
+                        <i class="bi bi-tree"></i>
+                    </a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-bell"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <button id="loginButton" class="btn btn-outline-secondary rounded-pill" type="submit"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">登入 / 註冊</button>
+                </li>
+                <!--     burger-offcanvas -->
+                <li class="nav-item">
+                    <button id="profileButton" class="btn btn-outline-secondary rounded-pill px-2 py-0" type="button"
+                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation" style="display:none;">
+                        <i class="bi bi-person-circle fs-3"></i>
+                        <i class="bi bi-list fs-3"></i>
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body position-relative">
+                            <p class="fs-1">
+                                <a class="nav-link d-flex flex-column align-items-center" href="">
+                                    <i class="bi bi-person-circle"></i>
+                                    <span>小明</span>
+                                </a>
+                            </p>
+                            <ul class="navbar-nav position-absolute start-50 translate-middle-x fs-2">
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center" href="#">
+                                        <i class="bi bi-people-fill me-3"></i>
+                                        <span class="fs-2">討論區</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <i class="bi bi-pencil-fill me-3"></i>發文
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#">
+                                        <i class="bi bi-heart me-3"></i>收藏小說
+                                    </a>
+                                </li>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- search-md-none -->
+        <form class="d-md-none w-100 pt-2">
+            <button class="btn position-absolute" type="submit"><i class="bi bi-search"></i></button>
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                style="padding-left:3rem">
+        </form>
+    </div>
+</header>
 <a href="about.html">about</a>
 <a href="contact.html">contact</a>
-    <h1 class="index-title">我是首頁</h1>
-    <img src="/20230828-test-00/assets/cat-0c0689ae.jpg" style="width: 300px;" alt="cat">
+    <!-- modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title fw-bold" id="exampleModalLabel">帳號登入</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <a class="btn btn-dark w-100 mb-2" href="#" role="button"><i class="bi bi-apple me-2"></i>使用 Apple 帳號登入</a>
+        <a class="btn btn-primary w-100 mb-2" href="#" role="button"><i class="bi bi-facebook me-2"></i>使用 Facebook 帳號登入</a>
+        <a class="btn btn-danger w-100" href="#" role="button"><i class="bi bi-google me-2"></i>使用 Google 帳號登入</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <footer class="footer">我是 footer</footer>
+<!-- carousel -->
+<div class="container mt-1 mb-5">
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://plus.unsplash.com/premium_photo-1684407617257-58c3ba45589d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Ym9va3xlbnwwfDB8NHx8fDA%3D&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="Image 1">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1530124175301-15984e162c84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJvb2t8ZW58MHwwfDR8fHww&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="Image 2">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1630948197497-3c0de9d73ad2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG5vdmVsfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="Image 3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+</div>
+
+<!-- tag-overflow -->
+<div class="container">
+  <div class="tag-container mb-3">
+    <div class="d-flex justify-content-between overflow-x-hidden tag-row">
+      <button class="btn ms-0">科幻</button>
+      <button class="btn btn-primary">奇幻</button>
+      <button class="btn">青春校園</button>
+      <button class="btn">恐怖靈異</button>
+      <button class="btn">懸疑推理</button>
+      <button class="btn">現代</button>
+      <button class="btn">歷史</button>
+      <button class="btn">穿越</button>
+      <button class="btn">戀愛</button>
+      <button class="btn">百合</button>
+      <button class="btn">BL</button>
+      <button class="btn">18+</button>
+    </div>
+  </div>
+</div>
+
+<!-- card list -->
+<div class="container py-1 card-list">
+  <div class="d-flex align-items-center mb-2">
+    <button type="button" class="btn btn-outline-warning">科幻</button>
+    <h5 class="fw-bold px-2 m-0">熱門小說</h5>
+    <a class="btn btn-outline-warning border-0 ms-auto" href="#" role="button">更多<i class="bi bi-arrow-right"></i></a>
+  </div>
+  <div class="row g-3">
+    <div class="col-md-6 col-lg-4">
+      <div class="card card-new p-1" data-label="連載中">
+        <div class="row gx-0 mb-1">
+          <img src="https://images.unsplash.com/photo-1578278020792-8aa63ffcdf5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=200&q=60" class="col-4 rounded-start" alt="神注視的孩子">
+          <div class="col-8">
+            <div class="card-body d-flex flex-column h-100 justify-content-between">
+              <h5 class="card-title fw-bold text-truncate">5555555555555神注視的孩子</h5>
+              <h6 class="card-subtitle color-primary mb-2"><i class="bi bi-person pe-1"></i>相思染</h6>
+              <p class="card-text mb-0 w-100 overflow-auto" style="height:4.5rem">伊萊爾遇見了一個奇怪的少年他不會說話 Lorem ipsum dolor sit amet consectetur adipisicing elit. In expedita beatae, nisi vero qui possimus? ...</p>
+            </div>
+          </div>
+        </div>
+        <ul class="icons-list fz12 p-0 m-0 d-flex justify-content-between">
+          <li class="list-inline-item">
+            <a class="link-dark d-flex align-items-center justify-content-center " href="">
+              <i class="bi bi-eye-fill color-gs pe-1"></i>
+              <span class="color-gs">999+</span>
+            </a>
+          </li>
+          <li class="list-inline-item  ">
+            <a class="link-dark  d-flex align-items-center justify-content-center  " href="">
+              <i class="bi bi-hand-thumbs-up-fill color-gs pe-1"></i>
+              <span class="color-gs">999+</span>
+            </a>
+          </li>
+          <li class="list-inline-item ">
+            <a class="link-dark  d-flex align-items-center justify-content-center" href="">
+              <i class="bi bi-heart-fill color-gs pe-1"></i>
+              <span class="color-gs">999+</span>
+            </a>
+          </li>
+          <li class="list-inline-item   ">
+            <a class="link-dark  d-flex align-items-center justify-content-center" href="">
+              <i class="bi bi-chat-fill color-gs pe-1"></i>
+              <span class="color-gs">999+</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="card card-new p-1" data-label="連載中">
+        <div class="row gx-0 mb-1">
+          <img src="https://images.unsplash.com/photo-1578278020792-8aa63ffcdf5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=200&q=60" class="col-4 rounded-start" alt="神注視的孩子">
+          <div class="col-8">
+            <div class="card-body d-flex flex-column h-100 justify-content-between">
+              <h5 class="card-title fw-bold text-truncate">5555555555555神注視的孩子</h5>
+              <h6 class="card-subtitle color-primary mb-2"><i class="bi bi-person pe-1"></i>相思染</h6>
+              <p class="card-text mb-0 w-100 overflow-auto" style="height:4.5rem">伊萊爾遇見了一個奇怪的少年他不會說話 Lorem ipsum dolor sit amet consectetur adipisicing elit. In expedita beatae, nisi vero qui possimus? ...</p>
+            </div>
+          </div>
+        </div>
+        <ul class="icons-list fz12 p-0 m-0 d-flex justify-content-between">
+          <li class="list-inline-item">
+            <a class="link-dark d-flex align-items-center justify-content-center " href="">
+              <i class="bi bi-eye-fill color-gs pe-1"></i>
+              <span class="color-gs">999+</span>
+            </a>
+          </li>
+          <li class="list-inline-item  ">
+            <a class="link-dark  d-flex align-items-center justify-content-center  " href="">
+              <i class="bi bi-hand-thumbs-up-fill color-gs pe-1"></i>
+              <span class="color-gs">999+</span>
+            </a>
+          </li>
+          <li class="list-inline-item ">
+            <a class="link-dark  d-flex align-items-center justify-content-center" href="">
+              <i class="bi bi-heart-fill color-gs pe-1"></i>
+              <span class="color-gs">999+</span>
+            </a>
+          </li>
+          <li class="list-inline-item   ">
+            <a class="link-dark  d-flex align-items-center justify-content-center" href="">
+              <i class="bi bi-chat-fill color-gs pe-1"></i>
+              <span class="color-gs">999+</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="card card-done p-1" data-label="已完結">
+        <div class="row gx-0 mb-1">
+          <img src="https://images.unsplash.com/photo-1578278020792-8aa63ffcdf5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=200&q=60" class="col-4 rounded-start" alt="神注視的孩子">
+          <div class="col-8">
+            <div class="card-body d-flex flex-column h-100 justify-content-between">
+              <h5 class="card-title fw-bold text-truncate">5555555555555神注視的孩子</h5>
+              <h6 class="card-subtitle color-primary mb-2"><i class="bi bi-person pe-1"></i>相思染</h6>
+              <p class="card-text mb-0 w-100 overflow-auto" style="height:4.5rem">伊萊爾遇見了一個奇怪的少年他不會說話 Lorem ipsum dolor sit amet consectetur adipisicing elit. In expedita beatae, nisi vero qui possimus? ...</p>
+            </div>
+          </div>
+        </div>
+        <ul class="icons-list fz12 p-0 m-0 d-flex justify-content-between">
+          <li class="list-inline-item">
+            <a class="link-dark d-flex align-items-center justify-content-center " href="">
+              <i class="bi bi-eye-fill color-gs pe-1"></i>
+              <span class="color-gs">999+</span>
+            </a>
+          </li>
+          <li class="list-inline-item  ">
+            <a class="link-dark  d-flex align-items-center justify-content-center  " href="">
+              <i class="bi bi-hand-thumbs-up-fill color-gs pe-1"></i>
+              <span class="color-gs">999+</span>
+            </a>
+          </li>
+          <li class="list-inline-item ">
+            <a class="link-dark  d-flex align-items-center justify-content-center" href="">
+              <i class="bi bi-heart-fill color-gs pe-1"></i>
+              <span class="color-gs">999+</span>
+            </a>
+          </li>
+          <li class="list-inline-item   ">
+            <a class="link-dark  d-flex align-items-center justify-content-center" href="">
+              <i class="bi bi-chat-fill color-gs pe-1"></i>
+              <span class="color-gs">999+</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- comment list -->
+<div class="container py-1 card-list">
+  <div class="d-flex align-items-center mb-2">
+    <button type="button" class="btn btn-outline-warning">科幻</button>
+    <h5 class="fw-bold px-2 m-0">新鮮留言</h5>
+    <a class="btn btn-outline-warning border-0 ms-auto" href="#" role="button"><i class="bi bi-arrow-repeat"></i>換一換</a>
+  </div>
+  <div class="row g-3">
+    <div class="col-md-6 col-lg-4">
+      <div class="card p-1 h-100">
+        <div class="card-body d-flex flex-column h-100 justify-content-between">
+          <div class="d-flex align-items-center mb-1">
+            <img style="border-radius: 50%; height: 20px;width: 20px;" class="me-2" src="https://images.unsplash.com/photo-1595211877493-41a4e5f236b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80" alt="">
+            <h6 class="card-subtitle color-primary m-0">51Samwu</h6>
+          </div>
+          <div class="card-text-truncate">
+            <p class="card-text mb-0 text-truncate-3-lines center-vertically">融合攻略遊戲跟穿越(?)的小說，很有趣</p>
+          </div>
+          <div class="row d-flex align-items-center">
+            <h6 class="col-md-8 card-title text-truncate m-md-0"><i class="bi bi-journal-text"></i>反派角色只有死亡結局（首部曲）</h6>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-warning rounded-pill w-100">看作品</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="card p-1 h-100">
+        <div class="card-body d-flex flex-column h-100 justify-content-between">
+          <div class="d-flex align-items-center mb-1">
+            <img style="border-radius: 50%; height: 20px;width: 20px;" class="me-2" src="https://images.unsplash.com/photo-1595211877493-41a4e5f236b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80" alt="">
+            <h6 class="card-subtitle color-primary m-0">墨</h6>
+          </div>
+          <div class="card-text-truncate">
+            <p class="card-text mb-0 text-truncate-3-lines center-vertically">有些文章太索碎，有些少了推理素材，不是很喜歡</p>
+          </div>
+          <div class="row d-flex align-items-center mb-1">
+            <h6 class="col-md-8 card-title text-truncate m-md-0"><i class="bi bi-journal-text"></i>偵探在菜市場裡迷了路（第十八屆台灣推理作家協會徵文獎作品集）</h6>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-warning w-100">看作品</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="card p-1 h-100">
+        <div class="card-body d-flex flex-column h-100 justify-content-between">
+          <div class="d-flex align-items-center mb-1">
+            <img style="border-radius: 50%; height: 20px;width: 20px;" class="me-2" src="https://images.unsplash.com/photo-1595211877493-41a4e5f236b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80" alt="">
+            <h6 class="card-subtitle color-primary m-0">天天都是星期天</h6>
+          </div>
+          <div class="card-text-truncate">
+            <p class="card-text mb-0 text-truncate-3-lines center-vertically">
+            雖有些多餘的描寫和無關的情節讓行文太過雜沓，但回想情節、對話和故事的畫面感，
+            仍覺得那種有點熟悉的異國風情很有意思，最後的轉折也增加了趣味。大馬或香港作家的口語中文跟他們寫作時要用的書面中文結構不同，
+            每次讀完作品再想到這點，我都會多一分敬意。作者後記也是真情流露，讓我感覺他細心觀察周圍並且珍惜日常一切。
+            </p>
+          </div>
+          <div class="row d-flex align-items-center">
+            <h6 class="col-md-8 card-title text-truncate m-md-0"><i class="bi bi-journal-text"></i>反派角色只有死亡結局（首部曲）</h6>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-warning w-100">看作品</button>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer class="bg-body-tertiary py-2">
+    <div class="container-fluid d-flex flex-column align-items-center">
+        <!-- footer-logo -->
+        <div class="d-flex justify-content-center">
+            <a class="navbar-brand d-flex" aria-current="page" href="#">
+                <i class="bi bi-apple me-1"></i>
+                <span class="d-none d-md-block">ThinkupTogether</span>
+                <span class="d-block d-md-none">TUT</span>
+            </a>
+        </div>
+        <!-- footer-bot -->
+        <ul class="list-unstyled d-flex h-100 mb-0">
+            <li class="pe-3">
+                <a class="nav-link" href="#">服務條款</a>
+            </li>
+            <li class="pe-3">
+                <a class="nav-link active" href="#">隱私權政策</a>
+            </li>
+            <li class="">
+                <a class="nav-link" href="#">使用說明</a>
+            </li>
+        </ul>
+    </div>
+</footer>
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>
